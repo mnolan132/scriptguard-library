@@ -1,6 +1,6 @@
 {
   "name": "scriptguard-library",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A secure and customizable text input field library for React.",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -9,7 +9,14 @@
     "build": "rollup -c",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["react", "input", "security", "sanitization", "XSS", "text field"],
+  "keywords": [
+    "react",
+    "input",
+    "security",
+    "sanitization",
+    "XSS",
+    "text field"
+  ],
   "author": "Matthew Nolan",
   "license": "MIT",
   "repository": {
@@ -40,5 +47,9 @@
     "react": "^18.0.0 || ^19.0.0",
     "react-dom": "^18.0.0 || ^19.0.0"
   },
-  "files": ["dist", "src", "README.md"]
+  "files": [
+    "dist",
+    "src",
+    "README.md"
+  ]
 }
