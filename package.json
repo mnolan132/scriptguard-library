@@ -14,12 +14,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/scriptguard-library.git"
+    "url": "https://github.com/mnolan132/scriptguard-library.git"
   },
   "bugs": {
-    "url": "https://github.com/yourusername/scriptguard-library/issues"
+    "url": "https://github.com/mnolan132/scriptguard-library/issues"
   },
-  "homepage": "https://github.com/yourusername/scriptguard-library",
+  "homepage": "https://github.com/mnolan132/scriptguard-library",
   "type": "commonjs",
   "dependencies": {
     "react": "^19.0.0",
