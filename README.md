@@ -1,4 +1,4 @@
-# Secure Component Library
+# Scriptguard Library
 
 A React component library for secure input handling, designed to prevent XSS attacks, enforce input validation, and enhance security.
 
