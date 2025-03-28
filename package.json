@@ -1,6 +1,6 @@
 {
   "name": "scriptguard-library",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "A secure and customizable text input field library for React.",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
