@@ -27,7 +27,7 @@ const defaultValidateEmail = (email: string, allowedDomains?: string[]) => {
   return "";
 };
 
-const SecureEmailInput: FC<SecureEmailInputProps> = ({
+export const SecureEmailInput: FC<SecureEmailInputProps> = ({
   value = "",
   onChange,
   sanitize = defaultSanitize,
@@ -62,5 +62,3 @@ const SecureEmailInput: FC<SecureEmailInputProps> = ({
     </div>
   );
 };
-
-export default SecureEmailInput;

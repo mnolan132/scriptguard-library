@@ -22,7 +22,7 @@ export default {
     peerDepsExternal(),
     resolve(),
     commonjs(),
-    typescript({ jsx: "react-jsx" }), // 👈 Ensure JSX is handled
+    typescript({ tsconfig: "./tsconfig.json" }),
     terser(),
   ],
   external: ["react", "react-dom"],

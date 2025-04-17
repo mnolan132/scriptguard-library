@@ -14,7 +14,7 @@ export type SecureTextInputProps = {
 
 const defaultSanitize = (input: string) => input.replace(/[<>/'"\\]/g, ""); // Remove potential XSS characters
 
-const SecureTextInput: FC<SecureTextInputProps> = ({
+export const SecureTextInput: FC<SecureTextInputProps> = ({
   value = "",
   onChange,
   allowedChars = /^[a-zA-Z0-9\s]*$/, // Allow alphanumeric and spaces
@@ -57,5 +57,3 @@ const SecureTextInput: FC<SecureTextInputProps> = ({
     />
   );
 };
-
-export default SecureTextInput;

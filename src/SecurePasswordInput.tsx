@@ -25,7 +25,7 @@ const defaultStrengthCheck = (password: string) => {
   return strength; // Returns a value from 0 (weak) to 5 (strong)
 };
 
-const SecurePasswordInput: FC<SecurePasswordInputProps> = ({
+export const SecurePasswordInput: FC<SecurePasswordInputProps> = ({
   value = "",
   onChange,
   minLength = 8,
@@ -86,5 +86,3 @@ const SecurePasswordInput: FC<SecurePasswordInputProps> = ({
     </div>
   );
 };
-
-export default SecurePasswordInput;

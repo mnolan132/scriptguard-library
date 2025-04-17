@@ -11,7 +11,7 @@ export type SecureCopyButtonProps = {
     clearTimeoutMs?: number; // Time (ms) before clipboard clears
   };
   
-const SecureCopyButton: FC<SecureCopyButtonProps> = ({
+export const SecureCopyButton: FC<SecureCopyButtonProps> = ({
   text,
   className = "",
   buttonText = "Copy",
@@ -55,5 +55,3 @@ const SecureCopyButton: FC<SecureCopyButtonProps> = ({
     </div>
   );
 };
-
-export default SecureCopyButton;
