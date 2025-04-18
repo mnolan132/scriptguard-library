@@ -36,14 +36,12 @@ export const SecurePasswordInput: FC<SecurePasswordInputProps> = ({
   showStrengthMeter = true,
   preventPaste = false,
 }) => {
-  const [password, setPassword] = useState(value);
+  const password = value || "";
   const [visible, setVisible] = useState(false);
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     let newPassword = sanitize(event.target.value);
     newPassword = newPassword.slice(0, maxLength); // Enforce max length
-
-    setPassword(newPassword);
     onChange?.(newPassword);
   };
 
