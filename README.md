@@ -76,6 +76,25 @@ const MyComponent = () => {
 };
 ```
 
+### 5️⃣ PasswordGenerator
+A secure password generator component that ensures strong, customizable passwords.
+Always includes at least one uppercase, lowercase, number, and symbol (if enabled).
+
+#### ✅ Usage:
+```tsx
+import { PasswordGenerator } from "scriptguard-library";
+
+const MyComponent = () => {
+  const handleGenerate = (password: string) => {
+    console.log("Generated password:", password);
+  };
+
+  return (
+    <PasswordGenerator minLength={12} onGenerate={handleGenerate} />
+  );
+};
+```
+
 ## 🔄 Updating the Package
 
 To update the package to the latest version:
