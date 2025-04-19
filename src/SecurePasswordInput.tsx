@@ -13,7 +13,7 @@ export type SecurePasswordInputProps = {
     preventPaste?: boolean;
   };
   
-const defaultSanitize = (input: string) => input.replace(/\s/g, ""); 
+const defaultSanitize = (input: string) => input.replace(/\s/g, ""); // Remove spaces
 
 const defaultStrengthCheck = (password: string) => {
   let strength = 0;
@@ -22,7 +22,7 @@ const defaultStrengthCheck = (password: string) => {
   if (/[a-z]/.test(password)) strength++;
   if (/[0-9]/.test(password)) strength++;
   if (/[@$!%*?&#]/.test(password)) strength++;
-  return strength;
+  return strength; // Returns a value from 0 (weak) to 5 (strong)
 };
 
 export const SecurePasswordInput: FC<SecurePasswordInputProps> = ({
@@ -41,7 +41,7 @@ export const SecurePasswordInput: FC<SecurePasswordInputProps> = ({
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     let newPassword = sanitize(event.target.value);
-    newPassword = newPassword.slice(0, maxLength); 
+    newPassword = newPassword.slice(0, maxLength); // Enforce max length
     onChange?.(newPassword);
   };
 
@@ -57,7 +57,7 @@ export const SecurePasswordInput: FC<SecurePasswordInputProps> = ({
         className="w-full p-2 border rounded"
         minLength={minLength}
         maxLength={maxLength}
-        onPaste={preventPaste ? (e) => e.preventDefault() : undefined} 
+        onPaste={preventPaste ? (e) => e.preventDefault() : undefined} // Prevent pasting if enabled
       />
       <button
         type="button"
