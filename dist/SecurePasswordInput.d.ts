@@ -1,4 +1,5 @@
 import { FC } from "react";
+import { css } from "@emotion/react";
 export type SecurePasswordInputProps = {
     value?: string;
     onChange?: (password: string) => void;
@@ -9,6 +10,8 @@ export type SecurePasswordInputProps = {
     className?: string;
     showStrengthMeter?: boolean;
     preventPaste?: boolean;
+    css?: ReturnType<typeof css>;
+    toggleCss?: ReturnType<typeof css>;
 };
 export declare const SecurePasswordInput: FC<SecurePasswordInputProps>;
 //# sourceMappingURL=SecurePasswordInput.d.ts.map
