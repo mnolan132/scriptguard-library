@@ -1,0 +1,1 @@
+{"version":3,"file":"useSanitizedForm.d.ts","sourceRoot":"","sources":["../../src/hooks/useSanitizedForm.ts"],"names":[],"mappings":"AAQA,wBAAgB,gBAAgB,CAAC,CAAC,SAAS,MAAM,CAAC,MAAM,EAAE,MAAM,CAAC,EAAE,YAAY,EAAE,CAAC;;6BAGhD,MAAM,CAAC,SAAS,MAAM;uBAa9B,CAAC;wBALjB,MAAM,CAAC,MACZ,GAAG,KAAK,CAAC,WAAW,CAAC,gBAAgB,GAAG,mBAAmB,CAAC;EAkBhE"}
