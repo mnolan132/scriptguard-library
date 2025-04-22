@@ -95,6 +95,41 @@ const MyComponent = () => {
 };
 ```
 
+### 6️⃣ useSanitizedForm
+A custom hook for managing form values with automatic sanitization of input values to prevent XSS attacks.
+
+#### ✅ Usage:
+```tsx
+import { useSanitizedForm } from "scriptguard-library";
+
+const MyComponent = () => {
+  const { values, handleChange, sanitizeAll } = useSanitizedForm({
+    name: "",
+    email: "",
+  });
+
+  return (
+    <>
+      <input
+        type="text"
+        value={values.name}
+        onChange={handleChange("name")}
+      />
+      <input
+        type="email"
+        value={values.email}
+        onChange={handleChange("email")}
+      />
+      <button onClick={() => console.log(sanitizeAll())}>
+        Submit
+      </button>
+    </>
+  );
+};
+
+```
+
+
 ## 🔄 Updating the Package
 
 To update the package to the latest version:
