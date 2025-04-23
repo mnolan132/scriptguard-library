@@ -25,10 +25,13 @@
   }
 `,nt=e=>e.replace(/[^a-zA-Z0-9@._-]/g,""),ot=(e,t)=>{if(!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(e))return"Invalid email format";if(t&&t.length>0){const r=e.split("@")[1];if(!t.includes(r))return`Allowed domains: ${t.join(", ")}`}return""},at=et`
   width: 100%;
+  position: relative;
+`,st=et`
   padding: 0.5rem 0.75rem;
   border: 1px solid #ccc;
   border-radius: 0.375rem;
   font-size: 1rem;
+  width: 100%;
   transition: border-color 0.2s ease-in-out;
 
   &:focus {
@@ -40,14 +43,14 @@
   &::placeholder {
     color: #a0aec0;
   }
-`,st=et`
+`,ct=et`
   color: #f56565;
   font-size: 0.875rem;
   margin-top: 0.25rem;
-`,ct=e=>e.replace(/\s/g,""),it=et`
+`,it=e=>e.replace(/\s/g,""),ut=et`
   position: relative;
   width: 100%;
-`,ut=et`
+`,lt=et`
   width: 100%;
   padding: 0.5rem 0.75rem;
   border: 1px solid #ccc;
@@ -64,7 +67,7 @@
   &::placeholder {
     color: #a0aec0;
   }
-`,lt=et`
+`,ft=et`
   position: absolute;
   top: 0.5rem;
   right: 0.75rem;
@@ -77,20 +80,20 @@
   &:hover {
     color: #4a5568;
   }
-`,ft=et`
+`,dt=et`
   margin-top: 0.5rem;
   width: 100%;
   height: 0.5rem;
   background-color: #e2e8f0;
   border-radius: 0.375rem;
   overflow: hidden;
-`,dt=e=>5===e?"#48bb78":e>=3?"#ecc94b":"#f56565",pt=({value:e="",onChange:r,minLength:n=8,maxLength:o=64,sanitize:a=ct,placeholder:s="Enter password...",className:c="",showStrengthMeter:i=!0,preventPaste:u=!1,css:l,toggleCss:f})=>{const[d,p]=t.useState(e),[m,h]=t.useState(!1);t.useEffect((()=>{p(e)}),[e]);const y=(e=>{let t=0;return e.length>=8&&t++,/[A-Z]/.test(e)&&t++,/[a-z]/.test(e)&&t++,/[0-9]/.test(e)&&t++,/[@$!%*?&#]/.test(e)&&t++,t})(d);return Ke("div",{css:it,className:c,children:[Ye("input",{type:m?"text":"password",value:d,onChange:e=>{let t=a(e.target.value).slice(0,o);p(t),r?.(t)},placeholder:s,minLength:n,maxLength:o,onPaste:u?e=>e.preventDefault():void 0,css:[ut,l],"aria-label":s}),Ye("button",{type:"button",onClick:()=>h((e=>!e)),css:[lt,f],"aria-label":"Toggle password visibility",children:m?"🙈":"👁️"}),i&&Ye("div",{css:ft,children:Ye("div",{style:{width:y/5*100+"%",height:"100%",backgroundColor:dt(y)}})})]})},mt=et`
+`,pt=e=>5===e?"#48bb78":e>=3?"#ecc94b":"#f56565",mt=({value:e="",onChange:r,minLength:n=8,maxLength:o=64,sanitize:a=it,placeholder:s="Enter password...",className:c="",showStrengthMeter:i=!0,preventPaste:u=!1,css:l,toggleCss:f})=>{const[d,p]=t.useState(e),[m,h]=t.useState(!1);t.useEffect((()=>{p(e)}),[e]);const y=(e=>{let t=0;return e.length>=8&&t++,/[A-Z]/.test(e)&&t++,/[a-z]/.test(e)&&t++,/[0-9]/.test(e)&&t++,/[@$!%*?&#]/.test(e)&&t++,t})(d);return Ke("div",{css:ut,className:c,children:[Ye("input",{type:m?"text":"password",value:d,onChange:e=>{let t=a(e.target.value).slice(0,o);p(t),r?.(t)},placeholder:s,minLength:n,maxLength:o,onPaste:u?e=>e.preventDefault():void 0,css:[lt,l],"aria-label":s}),Ye("button",{type:"button",onClick:()=>h((e=>!e)),css:[ft,f],"aria-label":"Toggle password visibility",children:m?"🙈":"👁️"}),i&&Ye("div",{css:dt,children:Ye("div",{style:{width:y/5*100+"%",height:"100%",backgroundColor:pt(y)}})})]})},ht=et`
   margin-right: 0.5rem;
   font-family: monospace;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-`,ht=et`
+`,yt=et`
   padding: 0.4rem 0.75rem;
   background-color: #4299e1;
   color: white;
@@ -108,12 +111,12 @@
     outline: none;
     box-shadow: 0 0 0 2px rgba(66, 153, 225, 0.5);
   }
-`,yt=et`
+`,vt=et`
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
   width: 100%;
-`,vt=et`
+`,bt=et`
   align-self: flex-start;
   padding: 0.5rem 1rem;
   background-color: #4a5568;
@@ -132,5 +135,5 @@
     outline: none;
     box-shadow: 0 0 0 2px rgba(74, 85, 104, 0.4);
   }
-`,bt=e=>{const t=document.createElement("div");return t.textContent=e.trim(),t.innerHTML};exports.PasswordGenerator=({minLength:e=12,maxLength:r=20,onGenerate:n,showStrengthMeter:o=!0})=>{const[a,s]=t.useState("");return Ke("div",{css:yt,children:[Ye(pt,{value:a,onChange:s,minLength:e,maxLength:r,showStrengthMeter:o}),Ye("button",{type:"button",onClick:()=>{const t=((e,t={upper:!0,lower:!0,numbers:!0,symbols:!0})=>{const r="ABCDEFGHIJKLMNOPQRSTUVWXYZ",n="abcdefghijklmnopqrstuvwxyz",o="0123456789",a="!@#$%^&*()_+-=[]{}|;:,.<>?",s=[],c=[];t.upper&&(s.push(r),c.push(r[Math.floor(26*Math.random())])),t.lower&&(s.push(n),c.push(n[Math.floor(26*Math.random())])),t.numbers&&(s.push(o),c.push(o[Math.floor(10*Math.random())])),t.symbols&&(s.push(a),c.push(a[Math.floor(26*Math.random())]));const i=s.join("");if(!i)return"";const u=Math.max(e-c.length,0),l=[];for(let e=0;e<u;e++)l.push(i[Math.floor(Math.random()*i.length)]);const f=[...c,...l];for(let e=f.length-1;e>0;e--){const t=Math.floor(Math.random()*(e+1));[f[e],f[t]]=[f[t],f[e]]}return f.join("")})(e);s(t),n?.(t)},css:vt,children:"Generate Password"})]})},exports.SecureCopyButton=({text:e,className:r="",buttonText:n="Copy",copiedText:o="Copied!",maskText:a=!1,autoClearClipboard:s=!1,clearTimeoutMs:c=3e3,textCss:i,buttonCss:u})=>{const[l,f]=t.useState(!1);return Ke("div",{className:`flex items-center ${r}`,children:[Ye("span",{css:[mt,i],children:a?"••••••••••":e}),Ye("button",{type:"button",onClick:async()=>{try{await navigator.clipboard.writeText(e),f(!0),s?setTimeout((async()=>{await navigator.clipboard.writeText(""),f(!1)}),c):setTimeout((()=>f(!1)),1500)}catch(e){console.error("Failed to copy text:",e)}},css:[ht,u],children:l?o:n})]})},exports.SecureEmailInput=({value:e="",onChange:r,sanitize:n=nt,validateEmail:o=ot,placeholder:a="Enter email...",className:s="",allowedDomains:c=[],css:i,errorCss:u})=>{const[l,f]=t.useState(e),[d,p]=t.useState("");return Ke("div",{className:`relative w-full ${s}`,children:[Ye("input",{type:"email",value:l,onChange:e=>{let t=n(e.target.value.trim().toLowerCase());f(t);const a=o(t,c);p(a),a||r?.(t)},placeholder:a,css:[at,i],"aria-label":a}),d&&Ye("p",{css:[st,u],children:d})]})},exports.SecurePasswordInput=pt,exports.SecureTextInput=({value:e="",onChange:r,allowedChars:n=/^[a-zA-Z0-9\s]*$/,maxLength:o=255,sanitize:a=tt,placeholder:s="Enter text...",className:c="",id:i,css:u})=>{const[l,f]=t.useState(e),d=t.useRef(null);t.useEffect((()=>{f(e)}),[e]);return Ye("input",{ref:d,type:"text",value:l,onChange:e=>{let t=e.target.value;t=t.split("").filter((e=>n.test(e))).join(""),t=a(t).slice(0,o),t!==l&&(f(t),r?.(t))},placeholder:s,className:c,id:i,"aria-label":s,css:[rt,u]})},exports.useSanitizedForm=function(e){const[r,n]=t.useState(e),o=(e,t)=>{n((r=>({...r,[e]:bt(t)})))};return{values:r,setSanitizedValue:o,sanitizeAll:()=>Object.keys(r).reduce(((e,t)=>(e[t]=bt(r[t]),e)),{}),handleChange:e=>t=>{o(e,t.target.value)}}};
+`,gt=e=>{const t=document.createElement("div");return t.textContent=e.trim(),t.innerHTML};exports.PasswordGenerator=({minLength:e=12,maxLength:r=20,onGenerate:n,showStrengthMeter:o=!0})=>{const[a,s]=t.useState("");return Ke("div",{css:vt,children:[Ye(mt,{value:a,onChange:s,minLength:e,maxLength:r,showStrengthMeter:o}),Ye("button",{type:"button",onClick:()=>{const t=((e,t={upper:!0,lower:!0,numbers:!0,symbols:!0})=>{const r="ABCDEFGHIJKLMNOPQRSTUVWXYZ",n="abcdefghijklmnopqrstuvwxyz",o="0123456789",a="!@#$%^&*()_+-=[]{}|;:,.<>?",s=[],c=[];t.upper&&(s.push(r),c.push(r[Math.floor(26*Math.random())])),t.lower&&(s.push(n),c.push(n[Math.floor(26*Math.random())])),t.numbers&&(s.push(o),c.push(o[Math.floor(10*Math.random())])),t.symbols&&(s.push(a),c.push(a[Math.floor(26*Math.random())]));const i=s.join("");if(!i)return"";const u=Math.max(e-c.length,0),l=[];for(let e=0;e<u;e++)l.push(i[Math.floor(Math.random()*i.length)]);const f=[...c,...l];for(let e=f.length-1;e>0;e--){const t=Math.floor(Math.random()*(e+1));[f[e],f[t]]=[f[t],f[e]]}return f.join("")})(e);s(t),n?.(t)},css:bt,children:"Generate Password"})]})},exports.SecureCopyButton=({text:e,className:r="",buttonText:n="Copy",copiedText:o="Copied!",maskText:a=!1,autoClearClipboard:s=!1,clearTimeoutMs:c=3e3,textCss:i,buttonCss:u})=>{const[l,f]=t.useState(!1);return Ke("div",{className:`flex items-center ${r}`,children:[Ye("span",{css:[ht,i],children:a?"••••••••••":e}),Ye("button",{type:"button",onClick:async()=>{try{await navigator.clipboard.writeText(e),f(!0),s?setTimeout((async()=>{await navigator.clipboard.writeText(""),f(!1)}),c):setTimeout((()=>f(!1)),1500)}catch(e){console.error("Failed to copy text:",e)}},css:[yt,u],children:l?o:n})]})},exports.SecureEmailInput=({value:e="",onChange:r,sanitize:n=nt,validateEmail:o=ot,placeholder:a="Enter email...",className:s="",allowedDomains:c=[],css:i,errorCss:u})=>{const[l,f]=t.useState(e),[d,p]=t.useState("");return Ke("div",{className:s,css:[at,i],children:[Ye("input",{type:"email",value:l,onChange:e=>{let t=n(e.target.value.trim().toLowerCase());f(t);const a=o(t,c);p(a),a||r?.(t)},placeholder:a,css:[st,i],"aria-label":a}),d&&Ye("p",{css:[ct,u],children:d})]})},exports.SecurePasswordInput=mt,exports.SecureTextInput=({value:e="",onChange:r,allowedChars:n=/^[a-zA-Z0-9\s]*$/,maxLength:o=255,sanitize:a=tt,placeholder:s="Enter text...",className:c="",id:i,css:u})=>{const[l,f]=t.useState(e),d=t.useRef(null);t.useEffect((()=>{f(e)}),[e]);return Ye("input",{ref:d,type:"text",value:l,onChange:e=>{let t=e.target.value;t=t.split("").filter((e=>n.test(e))).join(""),t=a(t).slice(0,o),t!==l&&(f(t),r?.(t))},placeholder:s,className:c,id:i,"aria-label":s,css:[rt,u]})},exports.useSanitizedForm=function(e){const[r,n]=t.useState(e),o=(e,t)=>{n((r=>({...r,[e]:gt(t)})))};return{values:r,setSanitizedValue:o,sanitizeAll:()=>Object.keys(r).reduce(((e,t)=>(e[t]=gt(r[t]),e)),{}),handleChange:e=>t=>{o(e,t.target.value)}}};
 //# sourceMappingURL=index.cjs.js.map
