@@ -33,6 +33,11 @@ const defaultValidateEmail = (email: string, allowedDomains?: string[]) => {
   return "";
 };
 
+const wrapperStyles = css`
+  width: 100%;
+  position: relative;
+`;
+
 const inputStyles = css`
   padding: 0.5rem 0.75rem;
   border: 1px solid #ccc;
@@ -83,7 +88,10 @@ export const SecureEmailInput: FC<SecureEmailInputProps> = ({
   };
 
   return (
-    <div className={className}>
+    <div
+      className={className}
+      css={[wrapperStyles, css]}
+    >
       <input
         type="email"
         value={email}
