@@ -34,11 +34,11 @@ const defaultValidateEmail = (email: string, allowedDomains?: string[]) => {
 };
 
 const inputStyles = css`
-  width: 100%;
   padding: 0.5rem 0.75rem;
   border: 1px solid #ccc;
   border-radius: 0.375rem;
   font-size: 1rem;
+  width: 100%;
   transition: border-color 0.2s ease-in-out;
 
   &:focus {
@@ -83,7 +83,7 @@ export const SecureEmailInput: FC<SecureEmailInputProps> = ({
   };
 
   return (
-    <div className={`relative w-full ${className}`}>
+    <div className={className}>
       <input
         type="email"
         value={email}
