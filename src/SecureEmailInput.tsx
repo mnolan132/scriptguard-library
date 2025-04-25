@@ -90,7 +90,7 @@ export const SecureEmailInput: FC<SecureEmailInputProps> = ({
   return (
     <div
       className={className}
-      css={[wrapperStyles, css]}
+      css={[wrapperStyles]}
     >
       <input
         type="email"
