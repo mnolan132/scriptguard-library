@@ -129,6 +129,33 @@ const MyComponent = () => {
 
 ```
 
+### 7️⃣ useSecureLocalStorage
+A custom hook to securely store and retrieve encrypted values from localStorage using a provided secret key.
+
+#### ✅ Usage:
+```tsx
+import { useSecureLocalStorage } from "scriptguard-library";
+
+const mySecretKey = "your-very-secure-key"; //STORE AS AN ENVIRONMENT VARIABLE!!
+
+const MyComponent = () => {
+  const { value, setValue, removeValue } = useSecureLocalStorage('userData', { name: '', email: '' }, mySecretKey);
+
+  return (
+    <div>
+      <button onClick={() => setValue({ name: 'John Doe', email: 'john@example.com' })}>
+        Save User
+      </button>
+      <button onClick={removeValue}>
+        Remove User
+      </button>
+      <pre>{JSON.stringify(value, null, 2)}</pre>
+    </div>
+  );
+};
+
+```
+
 
 ## 🔄 Updating the Package
 
