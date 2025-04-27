@@ -5,4 +5,5 @@ export { SecureCopyButton } from './SecureCopyButton';
 export { PasswordGenerator } from './PasswordGenerator';
 export type { SecureTextInputProps } from './SecureTextInput';
 export { useSanitizedForm } from './hooks/useSanitizedForm';
+export { useSecureLocalStorage } from './hooks/useSecureLocalStorage';
 //# sourceMappingURL=index.d.ts.map

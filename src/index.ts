@@ -7,3 +7,4 @@ export type { SecureTextInputProps } from './SecureTextInput'; // if you're usin
 
 // hooks
 export { useSanitizedForm } from './hooks/useSanitizedForm';
+export { useSecureLocalStorage } from './hooks/useSecureLocalStorage';
