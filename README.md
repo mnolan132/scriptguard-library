@@ -183,6 +183,52 @@ const MyComponent = () => {
 
 ```
 
+### 9️⃣ SecureFileUpload
+A secure file upload component that validates selected files against strict security rules, preventing suspicious or dangerous uploads.
+
+- Detects double extensions (e.g., file.php.jpg)
+
+- Blocks dangerous file types (e.g., .php, .exe, .bat)
+
+- Verifies file content using magic numbers (binary signatures)
+
+- Supports allowed MIME types
+
+- Enforces optional maximum file size
+
+- Displays friendly error messages for users
+
+#### ✅ Usage:
+```tsx
+import { SecureFileUpload } from "scriptguard-library";
+
+const MyComponent = () => {
+  const handleSafeFileSelect = (file: File) => {
+    console.log("Safe file selected:", file.name);
+    // Handle file upload or further processing
+  };
+
+  return (
+    <SecureFileUpload
+      onSafeFileSelect={handleSafeFileSelect}
+      allowedTypes={["image/jpeg", "application/pdf"]}
+      maxFileSizeMB={5}
+    />
+  );
+};
+
+```
+🔍 Validation checks performed:
+- Filename Sanitization: Blocks suspicious patterns like file.php.jpg.
+
+- Extension Check: Rejects dangerous extensions (.php, .exe, .bat, etc.).
+
+- MIME Type Check: Ensures the file type matches allowed MIME types if provided.
+
+- Magic Number Check: Confirms file content matches its extension (e.g., a .jpg is truly an image).
+
+- File Size Limit: Rejects files larger than specified maxFileSizeMB.
+
 
 ## 🔄 Updating the Package
 
