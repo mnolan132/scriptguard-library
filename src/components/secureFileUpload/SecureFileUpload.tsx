@@ -3,9 +3,6 @@ import React, { useRef, useState } from "react";
 import styled from "@emotion/styled";
 import { validateFile } from "./helpers/validateFile";
 
-// Import your validation helpers
-// import { validateFile } from './validateFile';
-
 interface SecureFileUploadProps {
   onSafeFileSelect: (file: File) => void;
   allowedTypes?: string[];
