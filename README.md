@@ -156,6 +156,33 @@ const MyComponent = () => {
 
 ```
 
+### 8️⃣ useInactivityLock
+A custom hook that locks the user out after a specified period of inactivity, ideal for protecting sensitive sessions.
+
+#### ✅ Usage:
+```tsx
+import { useInactivityLock } from "scriptguard-library";
+
+const MyComponent = () => {
+  useInactivityLock({
+    timeout: 5, // in minutes (can be fractional like 0.5 for 30s)
+    onLock: () => {
+      alert("You've been locked out due to inactivity.");
+      // Optional: redirect to login or lock screen
+    }
+  });
+
+  return (
+    <div>
+      <h1>Welcome back!</h1>
+      <p>This page will auto-lock if you're inactive for 5 minutes.</p>
+    </div>
+  );
+};
+
+
+```
+
 
 ## 🔄 Updating the Package
 
