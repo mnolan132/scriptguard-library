@@ -6,5 +6,6 @@ export { PasswordGenerator } from './PasswordGenerator';
 export { SecureFileUpload } from './components/secureFileUpload/SecureFileUpload';
 export { useSanitizedForm } from './hooks/useSanitizedForm';
 export { useSecureLocalStorage } from './hooks/useSecureLocalStorage';
+export { useInactivityLock } from './hooks/useInactivityLock';
 export type { SecureTextInputProps } from './SecureTextInput';
 //# sourceMappingURL=index.d.ts.map
