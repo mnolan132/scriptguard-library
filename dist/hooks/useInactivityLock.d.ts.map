@@ -1,0 +1,1 @@
+{"version":3,"file":"useInactivityLock.d.ts","sourceRoot":"","sources":["../../src/hooks/useInactivityLock.ts"],"names":[],"mappings":"AAEA,KAAK,qBAAqB,GAAG;IAC3B,OAAO,EAAE,MAAM,CAAC;IAChB,MAAM,EAAE,MAAM,IAAI,CAAC;CACpB,CAAC;AAEF,wBAAgB,iBAAiB,CAAC,EAAE,OAAO,EAAE,MAAM,EAAE,EAAE,qBAAqB,QAqB3E"}
